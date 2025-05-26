@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop hPSC | STEMCELL Technologies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #fafafa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .header-content .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        
+        .event-details {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .detail-item {
+            text-align: center;
+        }
+        
+        .detail-item .label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            margin-bottom: 5px;
+        }
+        
+        .detail-item .value {
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+        
+        .main-content {
+            padding: 80px 0;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #2c3e50;
+        }
+        
+        .intro-text {
+            font-size: 1.3rem;
+            text-align: center;
+            color: #7f8c8d;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            line-height: 1.6;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        
+        .feature-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-weight: 400;
+        }
+        
+        .feature p {
+            color: #7f8c8d;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .program {
+            background: white;
+            border-radius: 8px;
+            padding: 50px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+        
+        .program-item {
+            display: flex;
+            padding: 25px 0;
+            border-bottom: 1px solid #ecf0f1;
+            align-items: flex-start;
+            gap: 30px;
+        }
+        
+        .program-item:last-child {
+            border-bottom: none;
+        }
+        
+        .program-time {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #3498db;
+            min-width: 120px;
+            flex-shrink: 0;
+        }
+        
+        .program-content h4 {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .program-content p {
+            color: #7f8c8d;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .speaker-section {
+            background: #34495e;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .speaker-section h2 {
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .speaker-card {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .speaker-name {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .speaker-title {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .speaker-bio {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+        
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #3498db;
+            padding: 18px 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+            background: #f8f9fa;
+        }
+        
+        .benefits-list {
+            margin-top: 30px;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .benefits-list span {
+            margin: 0 15px;
+        }
+        
+        .contact-section {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .contact-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        .contact-info {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .value-proposition {
+            background: #ecf0f1;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .value-proposition h2 {
+            margin-bottom: 40px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #3498db;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .event-details {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .program-item {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .program-time {
+                min-width: auto;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .program {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Human Pluripotent Stem Cells</h1>
+                <p class="subtitle">Un workshop esclusivo per ricercatori che vogliono eccellere</p>
+                
+                <div class="event-details">
+                    <div class="detail-item">
+                        <div class="label">Data</div>
+                        <div class="value">25 Giugno 2025</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">Orario</div>
+                        <div class="value">10:00 — 13:00</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="label">Sede</div>
+                        <div class="value">Aula G1, Corpo G</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="container">
+            <section class="section">
+                <p class="intro-text">
+                    Tre ore intensive per padroneggiare le metodologie più avanzate nel campo delle cellule staminali pluripotenti umane, dalla caratterizzazione alla generazione di modelli organoidali complessi.
+                </p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-number">1</div>
+                        <h3>Metodologie Validate</h3>
+                        <p>Protocolli standardizzati per il mantenimento e la caratterizzazione di culture hPSC di alta qualità, testati nei laboratori di ricerca più prestigiosi.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-number">2</div>
+                        <h3>Standard Internazionali</h3>
+                        <p>Linee cellulari iPSC certificate che rispettano gli standard richiesti dalle principali riviste scientifiche e enti regolatori.</p>
+                    </div>
+                    
+                    <div class="feature">
+                        <div class="feature-number">3</div>
+                        <h3>Modelli Avanzati</h3>
+                        <p>Tecniche all'avanguardia per la generazione di co-culture e organoidi cerebrali per lo studio delle malattie neurologiche.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2>Programma Scientifico</h2>
+                
+                <div class="program">
+                    <div class="program-item">
+                        <div class="program-time">10:00—11:00</div>
+                        <div class="program-content">
+                            <h4>Human Pluripotent Stem Cells Quality Control</h4>
+                            <p>Controlli di qualità essenziali, marcatori di pluripotenza, stabilità genomica e metodologie per garantire la riproducibilità sperimentale.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-time">11:00—11:30</div>
+                        <div class="program-content">
+                            <h4>STEMCELL's iPSC Lines: Aligning with Standards</h4>
+                            <p>Panoramica delle linee cellulari disponibili, criteri di selezione e conformità agli standard internazionali per la ricerca clinica.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-time">11:30—11:50</div>
+                        <div class="program-content">
+                            <h4>Pausa Caffè</h4>
+                            <p>Momento di networking e discussione informale con i partecipanti e la relatrice.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-time">11:50—12:30</div>
+                        <div class="program-content">
+                            <h4>Co-culture Models & Brain Organoids</h4>
+                            <p>Protocolli per la generazione di modelli di co-coltura e organoidi cerebrali per lo studio dello sviluppo neurologico e delle malattie neurodegenerative.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-time">12:30—13:00</div>
+                        <div class="program-content">
+                            <h4>Discussione e Q&A</h4>
+                            <p>Sessione aperta per domande specifiche, troubleshooting e discussione di applicazioni pratiche nei vostri progetti di ricerca.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <section class="speaker-section">
+        <div class="container">
+            <h2>La Vostra Docente</h2>
+            <div class="speaker-card">
+                <div class="speaker-name">Dr.ssa Maria Rosaria Imperato, PhD</div>
+                <div class="speaker-title">Field Application Scientist, Cell Culture<br>STEMCELL Technologies</div>
+                <p class="speaker-bio">
+                    Esperta riconosciuta nel campo delle cellule staminali con anni di esperienza nella formazione di ricercatori in Europa. Specializzata nello sviluppo e nell'implementazione di protocolli per la cultura cellulare e la differenziazione di hPSC.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="value-proposition">
+        <div class="container">
+            <h2>Perché Partecipare</h2>
+            <p class="intro-text">
+                In un settore in rapida evoluzione, rimanere aggiornati sulle metodologie più avanzate è essenziale per il successo della vostra ricerca. Questo workshop vi offre l'opportunità di apprendere direttamente dai leader del settore.
+            </p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Ore Intensive</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Sessioni Pratiche</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Esperta Internazionale</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2>Registrati Oggi</h2>
+            <p class="cta-text">
+                I posti sono limitati per garantire un'esperienza formativa di qualità superiore. 
+                Non perdere questa opportunità unica di apprendimento e networking.
+            </p>
+            
+            <a href="mailto:info@maurizioautunno.com?subject=Registrazione Workshop hPSC - 25 Giugno 2025&body=Gentile Dr. Autunno,%0D%0A%0D%0ADesidero registrarmi al workshop 'Human Pluripotent Stem Cells' del 25 Giugno 2025.%0D%0A%0D%0ANome e Cognome:%0D%0AIstituzione/Università:%0D%0AEmail:%0D%0ATelefono:%0D%0A%0D%0ACordiali saluti" class="cta-button">
+                Registrati Gratuitamente
+            </a>
+            
+            <div class="benefits-list">
+                <span>✓ Partecipazione Gratuita</span>
+                <span>✓ Certificato di Partecipazione</span>
+                <span>✓ Materiali Didattici</span>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-section">
+        <div class="container">
+            <h3>Informazioni e Registrazioni</h3>
+            <div class="contact-info">
+                <strong>Dr. Maurizio Autunno</strong><br>
+                Responsabile Vendite Calabria<br>
+                📧 info@maurizioautunno.com<br>
+                📱 339.742.4377
+            </div>
+        </div>
+    </section>
+</body>
+</html>
