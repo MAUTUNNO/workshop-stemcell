@@ -195,24 +195,27 @@
         }
         
         .speaker-card {
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
             padding: 40px;
             background: rgba(255,255,255,0.1);
             border-radius: 8px;
             backdrop-filter: blur(10px);
+            text-align: left;
         }
         
         .speaker-name {
             font-size: 1.5rem;
             font-weight: 500;
             margin-bottom: 10px;
+            text-align: center;
         }
         
         .speaker-title {
             font-size: 1.1rem;
             opacity: 0.9;
             margin-bottom: 20px;
+            text-align: center;
         }
         
         .speaker-bio {
@@ -303,32 +306,6 @@
             margin-bottom: 40px;
         }
         
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 300;
-            color: #3498db;
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: 1rem;
-            color: #7f8c8d;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
         @media (max-width: 768px) {
             .header-content h1 {
                 font-size: 2.5rem;
@@ -346,11 +323,6 @@
             
             .program-time {
                 min-width: auto;
-            }
-            
-            .stats {
-                flex-direction: column;
-                gap: 30px;
             }
             
             .program {
@@ -388,20 +360,20 @@
         <div class="container">
             <section class="section">
                 <p class="intro-text">
-                    Tre ore intensive per padroneggiare le metodologie più avanzate nel campo delle cellule staminali pluripotenti umane, dalla caratterizzazione alla generazione di modelli organoidali complessi.
+                    Tre ore intensive per apprendere le metodologie più avanzate nel campo delle cellule staminali pluripotenti umane, dalla caratterizzazione alla generazione di modelli 3D e co-colture.
                 </p>
                 
                 <div class="features">
                     <div class="feature">
                         <div class="feature-number">1</div>
                         <h3>Metodologie Validate</h3>
-                        <p>Protocolli standardizzati per il mantenimento e la caratterizzazione di culture hPSC di alta qualità, testati nei laboratori di ricerca più prestigiosi.</p>
+                        <p>Protocolli standardizzati per il mantenimento e la caratterizzazione di culture hPSC di alta qualità, utilizzati nei laboratori di ricerca più prestigiosi.</p>
                     </div>
                     
                     <div class="feature">
                         <div class="feature-number">2</div>
                         <h3>Standard Internazionali</h3>
-                        <p>Linee cellulari iPSC certificate che rispettano gli standard richiesti dalle principali riviste scientifiche e enti regolatori.</p>
+                        <p>Linee iPSC prodotte secondo gli standard elaborati dall'International Society of Stem Cell Research.</p>
                     </div>
                     
                     <div class="feature">
@@ -419,8 +391,8 @@
                     <div class="program-item">
                         <div class="program-time">10:00—11:00</div>
                         <div class="program-content">
-                            <h4>Human Pluripotent Stem Cells Quality Control</h4>
-                            <p>Controlli di qualità essenziali, marcatori di pluripotenza, stabilità genomica e metodologie per garantire la riproducibilità sperimentale.</p>
+                            <h4>Human Pluripotent Stem Cell Quality</h4>
+                            <p>Controlli di qualità e metodologie per massimizzare la riproducibilità sperimentale tra laboratori.</p>
                         </div>
                     </div>
                     
@@ -428,7 +400,7 @@
                         <div class="program-time">11:00—11:30</div>
                         <div class="program-content">
                             <h4>STEMCELL's iPSC Lines: Aligning with Standards</h4>
-                            <p>Panoramica delle linee cellulari disponibili, criteri di selezione e conformità agli standard internazionali per la ricerca clinica.</p>
+                            <p>Presentazione delle linee cellulari iPS "healthy control" e caratterizzazione secondo i più recenti standard internazionali per l'utilizzo delle cellule staminali nella ricerca.</p>
                         </div>
                     </div>
                     
@@ -462,12 +434,12 @@
     
     <section class="speaker-section">
         <div class="container">
-            <h2>La Vostra Docente</h2>
+            <h2>La Relatrice</h2>
             <div class="speaker-card">
                 <div class="speaker-name">Dr.ssa Maria Rosaria Imperato, PhD</div>
                 <div class="speaker-title">Field Application Scientist, Cell Culture<br>STEMCELL Technologies</div>
                 <p class="speaker-bio">
-                    Esperta riconosciuta nel campo delle cellule staminali con anni di esperienza nella formazione di ricercatori in Europa. Specializzata nello sviluppo e nell'implementazione di protocolli per la cultura cellulare e la differenziazione di hPSC.
+                    Dopo la laurea in Biotecnologie Mediche e il Dottorato in Medicina Molecolare all'Università di Napoli "Federico II", ha ricoperto il ruolo di Research Associate presso l'Università di Birmingham (UK), dove ha collaborato a progetti internazionali e ha acquisito competenze in biologia molecolare e cellulare, biochimica e colture di cellule/progenitori staminali. Nel dinamico settore dell'industria Life Sciences, ha ricoperto diversi ruoli di supporto tecnico-scientifico sul campo. Nel 2024 è entrata a far parte di STEMCELL Technologies come Field Application Scientist, Cell Culture. In questo ruolo, continua a mettere a frutto la sua esperienza per supportare le esigenze dei ricercatori nel campo della ricerca sulle cellule staminali.
                 </p>
             </div>
         </div>
@@ -479,21 +451,6 @@
             <p class="intro-text">
                 In un settore in rapida evoluzione, rimanere aggiornati sulle metodologie più avanzate è essenziale per il successo della vostra ricerca. Questo workshop vi offre l'opportunità di apprendere direttamente dai leader del settore.
             </p>
-            
-            <div class="stats">
-                <div class="stat-item">
-                    <span class="stat-number">3</span>
-                    <span class="stat-label">Ore Intensive</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">4</span>
-                    <span class="stat-label">Sessioni Pratiche</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">1</span>
-                    <span class="stat-label">Esperta Internazionale</span>
-                </div>
-            </div>
         </div>
     </section>
     
@@ -510,9 +467,9 @@
             </a>
             
             <div class="benefits-list">
-                <span>✓ Partecipazione Gratuita</span>
-                <span>✓ Certificato di Partecipazione</span>
-                <span>✓ Materiali Didattici</span>
+                <span>✓ Brochure illustrative disponibili</span>
+                <span>✓ Materiale di Approfondimento</span>
+                <span>✓ Pausa caffè inclusa</span>
             </div>
         </div>
     </section>
